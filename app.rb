@@ -31,7 +31,6 @@ class InstaBot
 
     def like_posts search_term
         bot = @driver
-        bot.get('https://www.instagram.com/explore/tags/'+ search_term + '/')
         _loop = 5
         loop do
             bot.get('https://www.instagram.com/explore/tags/'+ search_term + '/')
