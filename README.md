@@ -5,9 +5,9 @@ Goes through a hashtag and likes all posts
 
 With homebrew for macOS:
 ```
-brew cask install firefox
-brew install geckodriver
-brew install python
+$ brew cask install firefox
+$ brew install geckodriver
+$ brew install python
 ```
 Windows: Download firefox, python and geckodriver from their respective homepages, and then drag and drop
 the geckodriver.exe file into your python directory.
