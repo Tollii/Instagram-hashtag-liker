@@ -10,7 +10,7 @@ $ brew cask install firefox
 $ brew install geckodriver
 $ brew install python
 ```
-Windows: Download firefox, python and geckodriver from their respective homepages, and then drag and drop
+Windows: Download firefox, ruby, python and geckodriver from their respective homepages, and then drag and drop
 the geckodriver.exe file into your python directory.
 
 To run the script:
