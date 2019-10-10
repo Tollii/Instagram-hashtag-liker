@@ -17,3 +17,6 @@ To run the script:
 * Edit the config.json file with your username and password
 
 * run app.rb and type in the hashtag you want searched
+
+![](ezgif-2-a99f098b86a9.gif)
+![](ezgif-2-7ce01d4a2ddd.gif)
