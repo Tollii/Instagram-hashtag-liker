@@ -52,6 +52,7 @@ class InstaBot
     end
 end
 
+query = gets.chomp
 bot = InstaBot.new "config.json"
 bot.login
-bot.like_posts gets.chomp
+bot.like_posts query
