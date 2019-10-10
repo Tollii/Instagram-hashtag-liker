@@ -1,10 +1,11 @@
 # Instagram-hashtag-liker
 Goes through a hashtag and likes all posts
 
-(Requires firefox and geckodriver and maybe python(?))
+(Requires firefox, geckodriver, ruby and maybe python(?))
 
 With homebrew for macOS:
 ```
+$ brew install ruby
 $ brew cask install firefox
 $ brew install geckodriver
 $ brew install python
