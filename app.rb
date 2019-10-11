@@ -2,7 +2,6 @@ require 'selenium-webdriver'
 require 'json'
 
 class InstaBot
-    attr_reader :username, :password
 
     def initialize filename
         file = File.read(filename)
