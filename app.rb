@@ -33,20 +33,24 @@ class InstaBot
         bot = @driver
         _loop = 5
         loop do
-            bot.get('https://www.instagram.com/explore/tags/'+ search_term + '/')
-            _loop.times do 
-                bot.execute_script 'window.scrollTo(0, document.body.scrollHeight)'
-                sleep 1
-            end
-            _loop += 5
-            posts = @wait.until { bot.find_elements(class: '_bz0w') }
-            links = posts.map{ |e| e.find_element(xpath: "./*").property("href")}
-            links.reverse.each do |link|
-                bot.get link
-                post = @wait.until { bot.find_element(class: 'afkep').find_element(xpath: './*').attribute("aria-label") }
-                p (post == "Unlike") ? "Already liked" : "Liking post"
-                break if post == "Unlike"
-                bot.find_element(class: 'afkep').click
+            begin
+                bot.get('https://www.instagram.com/explore/tags/'+ search_term + '/')
+                _loop.times do 
+                    bot.execute_script 'window.scrollTo(0, document.body.scrollHeight)'
+                    sleep 1
+                end
+                _loop += 5
+                posts = @wait.until { bot.find_elements(class: '_bz0w') }
+                links = posts.map{ |e| e.find_element(xpath: "./*").property("href")}
+                links.reverse.each do |link|
+                    bot.get link
+                    post = @wait.until { bot.find_element(class: 'afkep').find_element(xpath: './*').attribute("aria-label") }
+                    p (post == "Unlike") ? "Already liked" : "Liking post"
+                    break if post == "Unlike"
+                    bot.find_element(class: 'afkep').click
+                end
+            rescue
+                retry
             end
         end
     end
