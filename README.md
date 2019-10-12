@@ -1,5 +1,6 @@
 # Instagram-hashtag-liker
 Goes through a hashtag and likes all posts
+Might get you banned idk, be careful
 
 (Requires firefox, geckodriver, ruby and maybe python(?))
 
