@@ -43,10 +43,14 @@ class InstaBot
                 links = posts.map{ |e| e.find_element(xpath: "./*").property("href")}
                 links.reverse.each do |link|
                     bot.get link
-                    post = @wait.until { bot.find_element(class: 'afkep').find_element(xpath: './*').attribute("aria-label") }
+
+                    # Change class/xpath if instagram updates them
+                    css_class = '_8-yf5'
+
+                    post = @wait.until { bot.find_element(class: css_class).attribute("aria-label") }
                     p (post == "Unlike") ? "Already liked" : "Liking post"
                     break if post == "Unlike"
-                    bot.find_element(class: 'afkep').click
+                    bot.find_element(class: css_class).click
                 end
             rescue
                 retry
@@ -55,7 +59,8 @@ class InstaBot
     end
 end
 
+p 'Please enter the hashtag you want to iterate through, below'
 query = gets.chomp
-bot = InstaBot.new "config.json"
+bot = InstaBot.new 'config.json'
 bot.login
 bot.like_posts query
